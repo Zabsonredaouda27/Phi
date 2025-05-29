@@ -1,0 +1,132 @@
+
+> app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.28
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+  - Experiments (use with caution):
+    · outputFileTracingRoot
+
+ ✓ Starting...
+ ✓ Ready in 1331ms
+ ✓ Compiled /api/status in 438ms (57 modules)
+ GET /api/status 200 in 554ms
+ ○ Compiling /chat-phi ...
+ ✓ Compiled /chat-phi in 3.9s (1183 modules)
+ GET /chat-phi 200 in 4387ms
+ ✓ Compiled in 530ms (579 modules)
+ GET /api/status 200 in 49ms
+ GET /api/status 200 in 26ms
+ ✓ Compiled /api/chat in 263ms (597 modules)
+OpenAI API error: {
+  error: {
+    message: 'Incorrect API key provided: sk-abacu***********************************wxyz. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  }
+}
+Error in createChatCompletion: Error: Incorrect API key provided: sk-abacu***********************************wxyz. You can find your API key at https://platform.openai.com/account/api-keys.
+    at CustomOpenAIClient.createChatCompletion (webpack-internal:///(rsc)/./lib/openai-server.ts:27:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.create (webpack-internal:///(rsc)/./lib/openai-server.ts:92:24)
+    at async POST (webpack-internal:///(rsc)/./app/api/chat/route.ts:29:26)
+    at async /opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57228
+    at async eT.execute (/opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46851)
+    at async eT.handle (/opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:58760)
+    at async doRender (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderPageComponent (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:818:17)
+    at async /opt/hostedapp/node/root/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/opt/hostedapp/node/root/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:178:21)
+    at async handleRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:355:24)
+    at async requestHandlerImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:379:13)
+    at async Server.requestListener (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/start-server.js:141:13)
+Error in chat.completions.create: Error: Incorrect API key provided: sk-abacu***********************************wxyz. You can find your API key at https://platform.openai.com/account/api-keys.
+    at CustomOpenAIClient.createChatCompletion (webpack-internal:///(rsc)/./lib/openai-server.ts:27:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.create (webpack-internal:///(rsc)/./lib/openai-server.ts:92:24)
+    at async POST (webpack-internal:///(rsc)/./app/api/chat/route.ts:29:26)
+    at async /opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57228
+    at async eT.execute (/opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46851)
+    at async eT.handle (/opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:58760)
+    at async doRender (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderPageComponent (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:818:17)
+    at async /opt/hostedapp/node/root/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/opt/hostedapp/node/root/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:178:21)
+    at async handleRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:355:24)
+    at async requestHandlerImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:379:13)
+    at async Server.requestListener (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/start-server.js:141:13)
+OpenAI API error: Error: Incorrect API key provided: sk-abacu***********************************wxyz. You can find your API key at https://platform.openai.com/account/api-keys.
+    at CustomOpenAIClient.createChatCompletion (webpack-internal:///(rsc)/./lib/openai-server.ts:27:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.create (webpack-internal:///(rsc)/./lib/openai-server.ts:92:24)
+    at async POST (webpack-internal:///(rsc)/./app/api/chat/route.ts:29:26)
+    at async /opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57228
+    at async eT.execute (/opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46851)
+    at async eT.handle (/opt/hostedapp/node/root/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:58760)
+    at async doRender (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderPageComponent (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/base-server.js:818:17)
+    at async /opt/hostedapp/node/root/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/opt/hostedapp/node/root/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:178:21)
+    at async handleRequest (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:355:24)
+    at async requestHandlerImpl (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/router-server.js:379:13)
+    at async Server.requestListener (/opt/hostedapp/node/root/node_modules/next/dist/server/lib/start-server.js:141:13)
+ POST /api/chat 500 in 515ms
+ ✓ Compiled / in 455ms (1168 modules)
+ GET / 200 in 609ms
+ GET /api/status 200 in 33ms
+ GET /api/status 200 in 23ms
+ ○ Compiling /job ...
+ ✓ Compiled /job in 738ms (1208 modules)
+ GET /job 200 in 854ms
+ ○ Compiling /map ...
+ ✓ Compiled /map in 740ms (1250 modules)
+ GET /map 200 in 970ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 887ms (1253 modules)
+ GET /tilt-left/game 404 in 1009ms
+ ○ Compiling /tilt-left/tetris ...
+ ✓ Compiled /tilt-left/tetris in 714ms (1283 modules)
+ GET /tilt-left/tetris 200 in 850ms
+ GET / 200 in 90ms
+ GET /api/status 200 in 51ms
+ GET /api/status 200 in 21ms
+ GET / 200 in 56ms
+ GET /api/status 200 in 25ms
+ GET /api/status 200 in 29ms
+ GET / 200 in 49ms
+ GET /api/status 200 in 30ms
+ GET /api/status 200 in 23ms
+ ○ Compiling /tilt-left ...
+ ✓ Compiled /tilt-left in 1775ms (1261 modules)
+   Reload env: .env.local
+ ✓ Compiled in 910ms (1253 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 646ms (1264 modules)
+ GET /_next/static/chunks/app/tilt-left/page.js 404 in 140ms
+[?25h
