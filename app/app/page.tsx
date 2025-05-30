@@ -4,14 +4,36 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
 
   // Ensure component is mounted before rendering
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Robust navigation handler
+  const handleNavigation = (path: string, event?: React.MouseEvent) => {
+    if (event) {
+      event.preventDefault();
+    }
+    
+    console.log('Navigating to:', path);
+    
+    // Use router.push for programmatic navigation
+    router.push(path);
+    
+    // Fallback: use window.location if router fails
+    setTimeout(() => {
+      if (window.location.pathname === '/' && path !== '/') {
+        console.log('Router navigation failed, using window.location');
+        window.location.href = path;
+      }
+    }, 1000);
+  };
 
   // Navigation configuration with proper paths
   const navigationConfig = [
@@ -112,6 +134,7 @@ export default function Home() {
                 prefetch={true}
                 className="block w-full h-full"
                 aria-label={`Navigate to ${nav.label} - ${nav.description}`}
+                onClick={(e) => handleNavigation(nav.path, e)}
               >
                 <motion.div
                   whileHover={{ 
@@ -131,6 +154,13 @@ export default function Home() {
                   `}
                   role="button"
                   tabIndex={0}
+                  onClick={() => handleNavigation(nav.path)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleNavigation(nav.path);
+                    }
+                  }}
                 >
                   {nav.isCenter ? (
                     <div className="relative w-16 h-16 mb-2">
@@ -194,7 +224,12 @@ export default function Home() {
         <ul>
           {navigationConfig.map((nav) => (
             <li key={nav.direction}>
-              <a href={nav.path}>{nav.label}: {nav.description}</a>
+              <button 
+                onClick={() => handleNavigation(nav.path)}
+                className="text-left underline text-blue-600 hover:text-blue-800"
+              >
+                {nav.label}: {nav.description}
+              </button>
             </li>
           ))}
         </ul>
